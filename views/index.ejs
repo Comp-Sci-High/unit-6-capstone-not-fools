@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Cardverse - TCG Marketplace</title>
+  <link rel="stylesheet" href="/style.css" />
+</head>
+<body>
+  <header>
+    <h1>Cardverse</h1>
+    <nav>
+      <a href="#pokemon">Pokémon</a>
+      <a href="#magic">Magic: The Gathering</a>
+      <a href="#yugioh">Yu-Gi-Oh!</a>
+    </nav>
+  </header>
+
+  <main>
+    <section id="pokemon">
+      <h2>Pokémon Cards</h2>
+      <div class="card-grid">
+        <% pokemonCards.forEach(card => { %>
+          <div class="card">
+            <img src="<%= card.image %>" alt="<%= card.name %>">
+            <h3><%= card.name %></h3>
+            <p>$<%= card.price %></p>
+            <button>Add to Cart</button>
+          </div>
+        <% }) %>
+      </div>
+    </section>
+
+    <section id="magic">
+      <h2>Magic: The Gathering Cards</h2>
+      <div class="card-grid">
+        <% magicCards.forEach(card => { %>
+          <div class="card">
+            <img src="<%= card.image %>" alt="<%= card.name %>">
+            <h3><%= card.name %></h3>
+            <p>$<%= card.price %></p>
+            <button>Add to Cart</button>
+          </div>
+        <% }) %>
+      </div>
+    </section>
+
+    <section id="yugioh">
+      <h2>Yu-Gi-Oh! Cards</h2>
+      <div class="card-grid">
+        <% yugiohCards.forEach(card => { %>
+          <div class="card">
+            <img src="<%= card.image %>" alt="<%= card.name %>">
+            <h3><%= card.name %></h3>
+            <p>$<%= card.price %></p>
+            <button>Add to Cart</button>
+          </div>
+        <% }) %>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Cardverse. All rights reserved.</p>
+  </footer>
+</body>
+</html>
