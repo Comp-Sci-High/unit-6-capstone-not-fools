@@ -34,6 +34,7 @@ const cardSchema = new mongoose.Schema(
 const Card = mongoose.model("Card", cardSchema, "Cards");
 
 app.post("/add/card", async (req, res) => {
+  console.log(req.body)
   const newCard = await new Card({
     name: req.body.name,
     image: req.body.image,
@@ -51,7 +52,23 @@ app.post("/add/card", async (req, res) => {
 
 app.get("/", async (req, res) => {
     const cards = await Card.find({});
-    res.render("alma.ejs", { cards });
+    res.render("index.ejs", { cards });
+});
+
+
+app.get("/pokemon", async (req, res) => {
+  const cards = await Card.find({ genre: "pokemon" });
+  res.render("index.ejs", { cards });
+});
+
+app.get("/magic", async (req, res) => {
+  const cards = await Card.find({ genre: "magic" });
+  res.render("index.ejs", { cards });
+});
+
+app.get("/yugioh", async (req, res) => {
+  const cards = await Card.find({ genre: "yugioh" });
+  res.render("index.ejs", { cards });
 });
 
 
@@ -71,10 +88,13 @@ async function startServer(){
     await mongoose.connect("mongodb+srv://SE12:CSH2025@cluster101.nh11j.mongodb.net/cesar?retryWrites=true&w=majority&appName=Cluster101");
 
  
+    
 
     app.listen(3000, () => {
         console.log(`Server running.`);
     });
 }
 
+
 startServer();
+
