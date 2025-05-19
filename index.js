@@ -1,13 +1,12 @@
-import express from 'express';
-import mongoose from 'mongoose';
-
+const express = require('express')
+const mongoose = require('mongoose')
 const app = express();
 
-import path from 'path';
-import { fileURLToPath } from 'url';
+// import path from 'path';
+// import { fileURLToPath } from 'url';
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
+// const __filename = fileURLToPath(import.meta.url);
+// const __dirname = path.dirname(__filename);
 app.use(express.static(__dirname + "/public"));
 
 app.use(express.json());
@@ -86,9 +85,6 @@ app.patch("/patch/:_id", async (req, res) => {
     
 async function startServer(){
     await mongoose.connect("mongodb+srv://SE12:CSH2025@cluster101.nh11j.mongodb.net/cesar?retryWrites=true&w=majority&appName=Cluster101");
-
- 
-    
 
     app.listen(3000, () => {
         console.log(`Server running.`);
