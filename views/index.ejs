@@ -42,9 +42,9 @@
     <div class="card-grid">
       <% for(let x = 0; x < cards.length; x++) {%>
         <div class="card" data-card="<%= cards[x].id %>">
-          <img src="<%= cards[x].image %>" alt="<%= card.name %>">
-          <h3><%= card.name %></h3>
-          <p>$<%= card.price.toFixed(2) %></p>
+          <img src="<%= cards[x].image %>" alt="<%= cards[x].name %>">
+          <h3><%= cards[x].name %></h3>
+          <p>$<%= cards[x].price.toFixed(2) %></p>
           <button onclick="addToCart('<%= cards[x].name %>', `<%= cards[x].price %>`)">Add to Cart</button>
         </div>
       <% } %>
@@ -55,10 +55,10 @@
     <h2>Magic: The Gathering Cards</h2>
     <div class="card-grid">
       <% for(let x = 0; x < cards.length; x++) {%>
-        <div class="card" data-card="<%= card[x].id %>">
-          <img src="<%= cards[x].image %>" alt="<%= card.name %>">
-          <h3><%= card.name %></h3>
-          <p>$<%= card.price.toFixed(2) %></p>
+        <div class="card" data-card="<%= cards[x].id %>">
+          <img src="<%= cards[x].image %>" alt="<%= cards[x].name %>">
+          <h3><%= cards[x].name %></h3>
+          <p>$<%= cards[x].price.toFixed(2) %></p>
           <button onclick="addToCart('<%= cards[x].name %>', `<%= cards[x].price %>`)">Add to Cart</button>
         </div>
       <% } %>
@@ -70,9 +70,9 @@
     <div class="card-grid">
       <% for(let x = 0; x < cards.length; x++) {%>
         <div class="card" data-card="<%= cards[x].id %>">
-          <img src="<%= cards[x].image %>" alt="<%= card.name %>">
-          <h3><%= card.name %></h3>
-          <p>$<%= card.price.toFixed(2) %></p>
+          <img src="<%= cards[x].image %>" alt="<%= cards[x].name %>">
+          <h3><%= cards[x].name %></h3>
+          <p>$<%= cards[x].price.toFixed(2) %></p>
           <button onclick="addToCart('<%= cards[x].name %>', `<%= cards[x].price %>`)">Add to Cart</button>
         </div>
       <% } %>

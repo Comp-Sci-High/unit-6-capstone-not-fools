@@ -59,5 +59,6 @@ document.getElementById('clear-cart').addEventListener('click', () => {
   updateCartUI();
 });
 
+
 // Initial cart UI update
 updateCartUI();
