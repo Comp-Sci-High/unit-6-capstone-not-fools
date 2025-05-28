@@ -14,10 +14,11 @@
   <header>
   <h1>CardCanopy</h1>
   <nav>
-    <a href="/">Home</a>
+    <a href="inde.html">Home</a>
     <a href="/pokemon">Pokémon</a>
     <a href="/magic">Magic: The Gathering</a>
     <a href="/yugioh">Yu-Gi-Oh!</a>
+    <a href="pass.html">Admin</a>
   </nav>
 
   <!-- Cart Icon and Cart Count -->
@@ -41,12 +42,14 @@
     <h2>Pokémon Cards</h2>
     <div class="card-grid">
       <% for(let x = 0; x < cards.length; x++) {%>
+      <% if(cards[x].genre === "pokemon") {%>
         <div class="card" data-card="<%= cards[x].id %>">
           <img src="<%= cards[x].image %>" alt="<%= cards[x].name %>">
           <h3><%= cards[x].name %></h3>
           <p>$<%= cards[x].price.toFixed(2) %></p>
           <button onclick="addToCart('<%= cards[x].name %>', `<%= cards[x].price %>`)">Add to Cart</button>
         </div>
+        <% } %>
       <% } %>
     </div>
   </section>
@@ -55,12 +58,14 @@
     <h2>Magic: The Gathering Cards</h2>
     <div class="card-grid">
       <% for(let x = 0; x < cards.length; x++) {%>
+        <% if(cards[x].genre === "magic") {%>
         <div class="card" data-card="<%= cards[x].id %>">
           <img src="<%= cards[x].image %>" alt="<%= cards[x].name %>">
           <h3><%= cards[x].name %></h3>
           <p>$<%= cards[x].price.toFixed(2) %></p>
           <button onclick="addToCart('<%= cards[x].name %>', `<%= cards[x].price %>`)">Add to Cart</button>
         </div>
+        <% } %>
       <% } %>
     </div>
   </section>
@@ -69,15 +74,20 @@
     <h2>Yu-Gi-Oh! Cards</h2>
     <div class="card-grid">
       <% for(let x = 0; x < cards.length; x++) {%>
+        <% if(cards[x].genre === "yugioh") {%>
         <div class="card" data-card="<%= cards[x].id %>">
           <img src="<%= cards[x].image %>" alt="<%= cards[x].name %>">
           <h3><%= cards[x].name %></h3>
           <p>$<%= cards[x].price.toFixed(2) %></p>
           <button onclick="addToCart('<%= cards[x].name %>', `<%= cards[x].price %>`)">Add to Cart</button>
         </div>
+        <% } %>
       <% } %>
     </div>
   </section>
+
+
+  
 </main>
 <footer>
     <a href="https://www.instagram.com/cardcanopy/" target="_blank" style="color: rgb(255, 74, 252); text-decoration: none; display: inline-flex; align-items: center; gap: 5px;">

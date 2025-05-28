@@ -445,3 +445,131 @@ button:hover {
   text-align: center;
 }
 
+
+/* private.css - scoped under #body2 to avoid global styling conflicts */
+
+#body2 {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  padding: 2rem;
+}
+
+#body2 .modal {
+  display: none;
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  overflow: hidden; /* Prevent weird scroll behavior */
+}
+
+#body2 .modal-content {
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  width: 90%;
+  max-width: 500px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  text-align: left;
+  max-height: 90vh;           /* Limit height */
+  overflow-y: auto;           /* Enable internal scroll */
+}
+
+
+#body2 input, 
+#body2 textarea {
+  width: 100%;
+  margin-bottom: 1rem;
+  padding: 0.5rem;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+#body2 button {
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  cursor: pointer;
+  margin: 5px;
+  border-radius: 8px;
+  border: none;
+  background-color: #007bff;
+  color: white;
+}
+
+#body2 button:hover {
+  background-color: #0056b3;
+}
+
+#body2 img.preview {
+  max-width: 100%;
+  margin-top: 10px;
+  border-radius: 8px;
+}
+
+
+
+#email-form {
+  background: #fff;
+  padding: 1.5rem 0.3rem;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+  width: 100%; /* Full width */
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+#email-form label {
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+  color: #333;
+  margin-left: 5%; /* Moved slightly to the left */
+}
+
+#email-form input,
+#email-form textarea {
+  width: 80%;
+  margin-left: 5%; /* Moved slightly to the left */
+  padding: 0.75rem 1rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
+}
+
+#email-form input:focus,
+#email-form textarea:focus {
+  outline: none;
+  border-color: #5e60ce;
+}
+
+#email-form textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+#email-form button {
+  background-color: #5e60ce;
+  color: white;
+  padding: 0.75rem 1.25rem;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  width: fit-content;
+  margin-left: 5%; /* Moved slightly to the left */
+}
+
+#email-form button:hover {
+  background-color: #4b4fc1;
+}
+
+
+

@@ -16,223 +16,227 @@
 </head>
 <body>
   <header>
-  <h1>CardCanopy</h1>
-  <nav>
-    <a href="/">Home</a>
-    <a href="/pokemon">Pokémon</a>
-    <a href="/magic">Magic: The Gathering</a>
-    <a href="/yugioh">Yu-Gi-Oh!</a>
-    <a href="pass.html">Admin</a>
-  </nav>
+    <h1>CardCanopy</h1>
+    <nav>
+      <a href="inde.html">Home</a>
+      <a href="/pokemon">Pokémon</a>
+      <a href="/magic">Magic: The Gathering</a>
+      <a href="/yugioh">Yu-Gi-Oh!</a>
+      <a href="pass.html">Admin</a>
+    </nav>
 
-  <!-- Cart Icon and Cart Count -->
-  <div id="cart">
-  <button class="shiny" onclick="toggleCart()">
-    <img src="https://images.vexels.com/media/users/3/155845/isolated/preview/8840ae67a4baa51b2ce899a7fbb783f7-push-cart-icon-graphic.png" alt="Icon" width="16" height="16">
-    Cart (<span id="cart-count">0</span>)
-  </button>
+    <!-- Cart Icon and Cart Count -->
+    <div id="cart">
+      <button class="shiny" onclick="toggleCart()">
+        <img src="https://images.vexels.com/media/users/3/155845/isolated/preview/8840ae67a4baa51b2ce899a7fbb783f7-push-cart-icon-graphic.png" alt="Icon" width="16" height="16">
+        Cart (<span id="cart-count">0</span>)
+      </button>
 
-  <div id="cart-items" class="cart-items">
-    <h3>Your Cart</h3>
-    <ul id="cart-list"></ul>
-    <button id="clear-cart">Clear Cart</button>
-    <button id="checkout-btn" onclick="location.href='checkout.html'">Checkout</button>
-  </div>
-</div>
-
-</header>
-
+      <div id="cart-items" class="cart-items">
+        <h3>Your Cart</h3>
+        <ul id="cart-list"></ul>
+        <button id="clear-cart">Clear Cart</button>
+        <button id="checkout-btn" onclick="location.href='checkout.html'">Checkout</button>
+      </div>
+    </div>
+  </header>
 
   <main>
-  <section id="pokemon">
-    <h2 class="price1">Pokémon Cards</h2>
-    <div class="card-grid">
-      <div class="card" data-card="pikachu">
-        <div class="shiny-wrapper">
-          <img src="https://assets.bigcartel.com/product_images/375072148/Front.jpg?auto=format&fit=max&w=1300" alt="Pikachu">
-        </div>
-        <h3>Sabrina Gengar</h3>
-        <p class="price">$369.99</p>
+    <!-- New Section: Custom Submitted Card -->
+    <section id="submitted-card">
+  <h2>Submitted Card:By admin</h2>
+  <div id="submittedCardDisplay" class="card-grid"></div>
+  <!-- Container for delete button -->
+  <div id="deleteCardContainer"></div>
+</section>
 
-        <div class="card1">
-          <p>Genre: Pokemon</p>
-          <p>Grade: 6</p>
-          <p>Date: 2000</p>
-          <p>Available: 1</p>
-        </div>
-        <button onclick="addToCart('Sabrina Gengar', 4.99)">Add to Cart</button>
-      </div>
-      <div class="card" data-card="charizard">
-        <div class="shiny-wrapper">
-          <img src="https://assets.bigcartel.com/product_images/364089649/3421975.jpeg?auto=format&fit=max&w=500" alt="Charizard">
-        </div>
-        <h3>The Rocket Trap</h3>
-        <p class="price">$49.99</p>
 
-        <div class="card1">
-          <p>Genre: Pokemon</p>
-          <p>Grade: 7</p>
-          <p>Date: 2000</p>
-          <p>Available: 1</p>
+    <section id="pokemon">
+      <h2 class="price1">Pokémon Cards</h2>
+      <div class="card-grid">
+        <div class="card" data-card="pikachu">
+          <div class="shiny-wrapper">
+            <img src="https://assets.bigcartel.com/product_images/375072148/Front.jpg?auto=format&fit=max&w=1300" alt="Pikachu">
+          </div>
+          <h3>Sabrina Gengar</h3>
+          <p class="price">$369.99</p>
+          <div class="card1">
+            <p>Genre: Pokemon</p>
+            <p>Grade: 6</p>
+            <p>Date: 2000</p>
+            <p>Available: 1</p>
+          </div>
+          <button onclick="addToCart('Sabrina Gengar', 4.99)">Add to Cart</button>
         </div>
-        <button onclick="addToCart('The Rocket Trap', 99.99)">Add to Cart</button>
+        <div class="card" data-card="charizard">
+          <div class="shiny-wrapper">
+            <img src="https://assets.bigcartel.com/product_images/364089649/3421975.jpeg?auto=format&fit=max&w=500" alt="Charizard">
+          </div>
+          <h3>The Rocket Trap</h3>
+          <p class="price">$49.99</p>
+          <div class="card1">
+            <p>Genre: Pokemon</p>
+            <p>Grade: 7</p>
+            <p>Date: 2000</p>
+            <p>Available: 1</p>
+          </div>
+          <button onclick="addToCart('The Rocket Trap', 99.99)">Add to Cart</button>
+        </div>
+        <div class="card" data-card="blastoise">
+          <div class="shiny-wrapper">
+            <img src="https://assets.bigcartel.com/product_images/364220572/ZUKkiYV9h0G8G_bhBdQ_HQ.jpg?auto=format&fit=max&w=500" alt="Blastoise">
+          </div>
+          <h3>Misty</h3>
+          <p class="price">$94.99</p>
+          <div class="card1">
+            <p>Genre: Pokemon</p>
+            <p>Grade: 8</p>
+            <p>Date: 1997</p>
+            <p>Available: 1</p>
+          </div>
+          <button onclick="addToCart('Misty', 45.00)">Add to Cart</button>
+        </div>
+        <div class="card" data-card="alakazam">
+          <div class="shiny-wrapper">
+            <img src="https://assets.bigcartel.com/product_images/374688058/Front.jpg?auto=format&fit=max&w=500" alt="Alakazam">
+          </div>
+          <h3>Typhlosion</h3>
+          <p class="price">$49.99</p>
+          <div class="card1">
+            <p>Genre: Pokemon</p>
+            <p>Grade: 7</p>
+            <p>Date: 1999</p>
+            <p>Available: 1</p>
+          </div>
+          <button onclick="addToCart('Typhlosion', 32.50)">Add to Cart</button>
+        </div>
       </div>
-      <div class="card" data-card="blastoise">
-        <div class="shiny-wrapper">
-          <img src="https://assets.bigcartel.com/product_images/364220572/ZUKkiYV9h0G8G_bhBdQ_HQ.jpg?auto=format&fit=max&w=500" alt="Blastoise">
-        </div>
-        <h3>Misty</h3>
-        <p class="price">$94.99</p>
-        <div class="card1">
-          <p>Genre: Pokemon</p>
-          <p>Grade: 8</p>
-          <p>Date: 1997</p>
-          <p>Available: 1</p>
-        </div>
-        <button onclick="addToCart('Misty', 45.00)">Add to Cart</button>
-      </div>
-      <div class="card" data-card="alakazam">
-        <div class="shiny-wrapper">
-          <img src="https://assets.bigcartel.com/product_images/374688058/Front.jpg?auto=format&fit=max&w=500" alt="Alakazam">
-        </div>
-        <h3>Typhlosion</h3>
-        <p class="price">$49.99</p>
-        <div class="card1">
-          <p>Genre: Pokemon</p>
-          <p>Grade: 7</p>
-          <p>Date: 1999</p>
-          <p>Available: 1</p>
-        </div>
-        <button onclick="addToCart('Typhlosion', 32.50)">Add to Cart</button>
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <section id="magic">
-    <h2 class="price2">Magic: The Gathering Cards</h2>
-    <div class="card-grid">
-      <div class="card" data-card="blacklotus">
-        <div class="shiny-wrapper">
-          <img src="https://www.mtgpics.com/pics/reg/and/001.jpg" alt="Black Lotus">
+    <section id="magic">
+      <h2 class="price2">Magic: The Gathering Cards</h2>
+      <div class="card-grid">
+        <div class="card" data-card="blacklotus">
+          <div class="shiny-wrapper">
+            <img src="https://www.mtgpics.com/pics/reg/and/001.jpg" alt="Black Lotus">
+          </div>
+          <h3>Aegis Angel</h3>
+          <p class="price">$10,000.00</p>
+          <div class="card1">
+            <p>Genre: Pokemon</p>
+            <p>Grade: 6</p>
+            <p>Date: 2000</p>
+            <p>Available: 1</p>
+          </div>
+          <button onclick="addToCart('Aegis Angel', 10000)">Add to Cart</button>
         </div>
-        <h3>Aegis Angel</h3>
-        <p class="price">$10,000.00</p>
-        <div class="card1">
-          <p>Genre: Pokemon</p>
-          <p>Grade: 6</p>
-          <p>Date: 2000</p>
-          <p>Available: 1</p>
+        <div class="card" data-card="lightningbolt">
+          <div class="shiny-wrapper">
+            <img src="https://www.mtgpics.com/pics/reg/ice/003.jpg" alt="Lightning Bolt">
+          </div>
+          <h3>Adarkar Unicorn</h3>
+          <p class="price">$1.50</p>
+          <div class="card1">
+            <p>Genre: Pokemon</p>
+            <p>Grade: 6</p>
+            <p>Date: 2000</p>
+            <p>Available: 1</p>
+          </div>
+          <button onclick="addToCart('Adarkar Unicorn', 1.5)">Add to Cart</button>
         </div>
-        <button onclick="addToCart('Aegis Angel', 10000)">Add to Cart</button>
+        <div class="card" data-card="timewalk">
+          <div class="shiny-wrapper">
+            <img src="https://www.mtgpics.com/pics/reg/moc/166.jpg" alt="Time Walk">
+          </div>
+          <h3>Acclaimed Contender</h3>
+          <p class="price">$7,500.00</p>
+          <div class="card1">
+            <p>Genre: Pokemon</p>
+            <p>Grade: 6</p>
+            <p>Date: 2000</p>
+            <p>Available: 1</p>
+          </div>
+          <button onclick="addToCart('Acclaimed Contender', 7500)">Add to Cart</button>
+        </div>
+        <div class="card" data-card="shivan">
+          <div class="shiny-wrapper">
+            <img src="https://www.mtgpics.com/pics/reg/5th/001.jpg" alt="Shivan Dragon">
+          </div>
+          <h3>Abbey Gargoyles</h3>
+          <p class="price">$3.00</p>
+          <div class="card1">
+            <p>Genre: Pokemon</p>
+            <p>Grade: 6</p>
+            <p>Date: 2000</p>
+            <p>Available: 1</p>
+          </div>
+          <button onclick="addToCart('Abbey Gargoyles', 3)">Add to Cart</button>
+        </div>
       </div>
-      <div class="card" data-card="lightningbolt">
-        <div class="shiny-wrapper">
-          <img src="https://www.mtgpics.com/pics/reg/ice/003.jpg" alt="Lightning Bolt">
-        </div>
-        <h3>Adarkar Unicorn</h3>
-        <p class="price">$1.50</p>
-        <div class="card1">
-          <p>Genre: Pokemon</p>
-          <p>Grade: 6</p>
-          <p>Date: 2000</p>
-          <p>Available: 1</p>
-        </div>
-        <button onclick="addToCart('Adarkar Unicorn', 1.5)">Add to Cart</button>
-      </div>
-      <div class="card" data-card="timewalk">
-        <div class="shiny-wrapper">
-          <img src="https://www.mtgpics.com/pics/reg/moc/166.jpg" alt="Time Walk">
-        </div>
-        <h3>Acclaimed Contender</h3>
-        <p class="price">$7,500.00</p>
-        <div class="card1">
-          <p>Genre: Pokemon</p>
-          <p>Grade: 6</p>
-          <p>Date: 2000</p>
-          <p>Available: 1</p>
-        </div>
-        <button onclick="addToCart('Acclaimed Contender', 7500)">Add to Cart</button>
-      </div>
-      <div class="card" data-card="shivan">
-        <div class="shiny-wrapper">
-          <img src="https://www.mtgpics.com/pics/reg/5th/001.jpg" alt="Shivan Dragon">
-        </div>
-        <h3>Abbey Gargoyles</h3>
-        <p class="price">$3.00</p>
-        <div class="card1">
-          <p>Genre: Pokemon</p>
-          <p>Grade: 6</p>
-          <p>Date: 2000</p>
-          <p>Available: 1</p>
-        </div>
-        <button onclick="addToCart('Abbey Gargoyles', 3)">Add to Cart</button>
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <section id="yugioh">
-    <h2 class="price3">Yu-Gi-Oh! Cards</h2>
-    <div class="card-grid">
-      <div class="card" data-card="blueeyes">
-        <div class="shiny-wrapper">
-          <img src="https://images.ygoprodeck.com/images/cards/89631143.jpg" alt="Blue-Eyes White Dragon">
+    <section id="yugioh">
+      <h2 class="price3">Yu-Gi-Oh! Cards</h2>
+      <div class="card-grid">
+        <div class="card" data-card="blueeyes">
+          <div class="shiny-wrapper">
+            <img src="https://images.ygoprodeck.com/images/cards/89631143.jpg" alt="Blue-Eyes White Dragon">
+          </div>
+          <h3>Blue-Eyes White Dragon</h3>
+          <p class="price">$15.00</p>
+          <div class="card1">
+            <p>Genre: Pokemon</p>
+            <p>Grade: 6</p>
+            <p>Date: 2000</p>
+            <p>Available: 1</p>
+          </div>
+          <button onclick="addToCart('Blue-Eyes White Dragon', 15)">Add to Cart</button>
         </div>
-        <h3>Blue-Eyes White Dragon</h3>
-        <p class="price">$15.00</p>
-        <div class="card1">
-          <p>Genre: Pokemon</p>
-          <p>Grade: 6</p>
-          <p>Date: 2000</p>
-          <p>Available: 1</p>
+        <div class="card" data-card="darkmagician">
+          <div class="shiny-wrapper">
+            <img src="https://images.ygoprodeck.com/images/cards/99937011.jpg" alt="Dark Magician">
+          </div>
+          <h3>Mudora the Sword Oracle</h3>
+          <p class="price">$12.50</p>
+          <div class="card1">
+            <p>Genre: Pokemon</p>
+            <p>Grade: 6</p>
+            <p>Date: 2000</p>
+            <p>Available: 1</p>
+          </div>
+          <button onclick="addToCart('Mudora the Sword Oracle', 12.5)">Add to Cart</button>
         </div>
-        <button onclick="addToCart('Blue-Eyes White Dragon', 15)">Add to Cart</button>
+        <div class="card" data-card="exodia">
+          <div class="shiny-wrapper">
+            <img src="https://images.ygoprodeck.com/images/cards/99899504.jpg" alt="Exodia the Forbidden One">
+          </div>
+          <h3>Skull Flame</h3>
+          <p class="price">$24.99</p>
+          <div class="card1">
+            <p>Genre: Pokemon</p>
+            <p>Grade: 6</p>
+            <p>Date: 2000</p>
+            <p>Available: 1</p>
+          </div>
+          <button onclick="addToCart('Skull Flame', 24.99)">Add to Cart</button>
+        </div>
+        <div class="card" data-card="red-eyes">
+          <div class="shiny-wrapper">
+            <img src="https://images.ygoprodeck.com/images/cards/53466722.jpg" alt="Red-Eyes Black Dragon">
+          </div>
+          <h3>First of the Dragonlords</h3>
+          <p class="price">$13.75</p>
+          <div class="card1">
+            <p>Genre: Pokemon</p>
+            <p>Grade: 6</p>
+            <p>Date: 2000</p>
+            <p>Available: 1</p>
+          </div>
+          <button onclick="addToCart('First of the Dragonlords', 13.75)">Add to Cart</button>
+        </div>
       </div>
-      <div class="card" data-card="darkmagician">
-        <div class="shiny-wrapper">
-          <img src="https://images.ygoprodeck.com/images/cards/99937011.jpg" alt="Dark Magician">
-        </div>
-        <h3>Mudora the Sword Oracle</h3>
-        <p class="price">$12.50</p>
-        <div class="card1">
-          <p>Genre: Pokemon</p>
-          <p>Grade: 6</p>
-          <p>Date: 2000</p>
-          <p>Available: 1</p>
-        </div>
-        <button onclick="addToCart('Mudora the Sword Oracle', 12.5)">Add to Cart</button>
-      </div>
-      <div class="card" data-card="exodia">
-        <div class="shiny-wrapper">
-          <img src="https://images.ygoprodeck.com/images/cards/99899504.jpg" alt="Exodia the Forbidden One">
-        </div>
-        <h3>Skull Flame</h3>
-        <p class="price">$24.99</p>
-        <div class="card1">
-          <p>Genre: Pokemon</p>
-          <p>Grade: 6</p>
-          <p>Date: 2000</p>
-          <p>Available: 1</p>
-        </div>
-        <button onclick="addToCart('Skull Flame', 24.99)">Add to Cart</button>
-      </div>
-      <div class="card" data-card="red-eyes">
-        <div class="shiny-wrapper">
-          <img src="https://images.ygoprodeck.com/images/cards/53466722.jpg" alt="Red-Eyes Black Dragon">
-        </div>
-        <h3>First of the Dragonlords</h3>
-        <p class="price">$13.75</p>
-        <div class="card1">
-          <p>Genre: Pokemon</p>
-          <p>Grade: 6</p>
-          <p>Date: 2000</p>
-          <p>Available: 1</p>
-        </div>
-        <button onclick="addToCart('First of the Dragonlords', 13.75)">Add to Cart</button>
-      </div>
-    </div>
-  </section>
-</main>
-
+    </section>
+  </main>
 
   <footer>
     <a href="https://www.instagram.com/cardcanopy/" target="_blank" style="color: rgb(255, 74, 252); text-decoration: none; display: inline-flex; align-items: center; gap: 5px;">
@@ -242,5 +246,7 @@
   </footer>
 
   <script src="cart.js"></script>
+  <script src="inde.js"></script>
 </body>
 </html>
+

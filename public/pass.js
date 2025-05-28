@@ -9,3 +9,6 @@ function checkPassword() {
     document.getElementById("password").value = "";
   }
 }
+
+
+

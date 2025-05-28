@@ -20,10 +20,9 @@ app.use((req, res, next) => {
 
 const cardSchema = new mongoose.Schema(
     {
+
         name: { type: String},
         image: { type: String},
-        grade: { type: Number},
-        date: { type: Date},
         price: { type: Number},
         avail: { type: Boolean},
         genre: {type: String }
