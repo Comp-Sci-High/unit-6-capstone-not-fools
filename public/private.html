@@ -22,17 +22,20 @@
     <button onclick="openModal()">Create Card</button>
 
     <div class="modal" id="cardModal" style="display:none;">
-      <form class="modal-content">
-        <h2>New Card</h2>
-        <input type="text" id="cardTitle" placeholder="Enter title" />
-        <textarea id="cardText" rows="4" placeholder="Enter text"></textarea>
-        <input type="number" placeholder="Enter price" />
-        <input type="text" id="cardImage" placeholder="card link image" />
-        <img id="imagePreview" class="preview" style="display:none; max-width: 100px;" />
-        <div>
-          <button onclick="submitCard()">Submit</button>
-          <button onclick="closeModal()">Cancel</button>
-        </div>
+  <form class="modal-content" id="cardForm">
+    <h2>New Card</h2>
+    <input type="text" id="cardTitle" placeholder="Enter title" required />
+    <textarea id="cardText" rows="4" placeholder="Enter text"></textarea>
+    <input type="number" id="cardPrice" placeholder="Enter price" />
+    <input type="text" id="cardImage" placeholder="Image URL" required />
+    <img id="imagePreview" class="preview" style="display:none; max-width: 100px;" />
+    
+    <button type="submit" id="submitCardButton">Submit</button>
+    <button type="button" onclick="closeModal()">Cancel</button>
+  </form>
+</div>
+
+          
       </form>
     </div>
   </main>

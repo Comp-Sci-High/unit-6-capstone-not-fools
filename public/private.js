@@ -1,67 +1,66 @@
-// private.js
 const modal = document.getElementById('cardModal');
 const imageInput = document.getElementById('cardImage');
 const imagePreview = document.getElementById('imagePreview');
+const titleInput = document.getElementById('cardTitle');
+const textInput = document.getElementById('cardText');
+const priceInput = document.getElementById('cardPrice');
+const submitButton = document.getElementById('submitCardButton');
+const form = document.getElementById('cardForm');
 
+// Open modal
 function openModal() {
   modal.style.display = 'flex';
 }
 
+// Close modal
 function closeModal() {
   modal.style.display = 'none';
 }
 
-imageInput.addEventListener('change', function () {
-  const file = this.files[0];
-  if (file) {
-    const reader = new FileReader();
-    reader.onload = function (e) {
-      imagePreview.src = e.target.result;
-      imagePreview.style.display = 'block';
-    };
-    reader.readAsDataURL(file);
+// Preview image when URL is typed
+imageInput.addEventListener('input', function () {
+  const url = imageInput.value.trim();
+  if (url) {
+    imagePreview.src = url;
+    imagePreview.style.display = 'block';
+  } else {
+    imagePreview.style.display = 'none';
+    imagePreview.src = '';
   }
 });
 
-async function submitCard() {
-  console.log('ssss')
+// Handle form submission
+form.addEventListener('submit', function (event) {
+  event.preventDefault(); // Prevent default form behavior
 
-  const teach = document.querySelector('form')
-//teach.addEventListener("sumbit", async (e)=>{
-  // e.preventDefault()
-   const teachData = new FormData(teach)
-   const teachList = Object.fromEntries(teachData)
+  const title = titleInput.value.trim();
+  const text = textInput.value.trim();
+  const price = priceInput.value;
+  const image = imageInput.value.trim();
 
+  if (!title || !image) {
+    alert('Please provide a title and image URL.');
+    return;
+  }
 
-console.log(teachList)
-console.log('hello')
-   const response = await fetch("/add/teacher", {
-       method: "POST",
-       headers:{
-        "Content-Type":"application/json" 
-       },
-body: JSON.stringify(teachList)
-   })
-const data = await response.json()
-console.log(data)
-//closeModal();
-//location.href = '/';
-//})
-  // const title = document.getElementById('cardTitle').value;
-  // const text = document.getElementById('cardText').value;
-  // const image = imagePreview.src;
+  const newCard = {
+    id: Date.now(),
+    title,
+    text,
+    price,
+    image
+  };
 
-  // const newCard = {
-  //   id: Date.now(),
-  //   title,
-  //   text,
-  //   image,
-  //   price,
-  //   avail
-  // };
+  const cards = JSON.parse(localStorage.getItem('cards') || '[]');
+  cards.push(newCard);
+  localStorage.setItem('cards', JSON.stringify(cards));
 
-  // const cards = JSON.parse(localStorage.getItem('cards') || '[]');
-  // cards.push(newCard);
-  // localStorage.setItem('cards', JSON.stringify(cards));
+  // Clear form
+  form.reset();
+  imagePreview.style.display = 'none';
+  imagePreview.src = '';
 
-}
+  // Close modal and redirect
+  closeModal();
+  window.location.href = 'inde.html';
+});

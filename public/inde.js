@@ -1,36 +1,42 @@
 window.addEventListener('DOMContentLoaded', () => {
-  const cardData = JSON.parse(localStorage.getItem('submittedCard'));
+  const cards = JSON.parse(localStorage.getItem('cards') || '[]');
   const display = document.getElementById('submittedCardDisplay');
   const deleteContainer = document.getElementById('deleteCardContainer');
 
-  if (cardData && display) {
-    display.innerHTML = `
-      <div class="card">
-        <div class="shiny-wrapper">
-          <img src="${cardData.image}" alt="${cardData.title}">
+  if (cards.length > 0 && display) {
+    display.innerHTML = ''; // Clear existing content
+
+    cards.forEach(cardData => {
+      const price = cardData.price ? parseFloat(cardData.price).toFixed(2) : '0.00';
+      const cardHTML = `
+        <div class="card" style="margin-bottom: 1em;">
+          <div class="shiny-wrapper">
+            <img src="${cardData.image}" alt="${cardData.title}" style="max-width: 100%; height: auto;">
+          </div>
+          <h3>${cardData.title}</h3>
+          <p class="price">$${price}</p>
+          <div class="card1">
+            <p>${cardData.text}</p>
+          </div>
+          <button onclick="addToCart('${cardData.title}', ${price})">Add to Cart</button>
         </div>
-        <h3>${cardData.title}</h3>
-        <p class="price">Custom Card</p>
-        <div class="card1">
-          <p>${cardData.text}</p>
-        </div>
-        <button onclick="addToCart('${cardData.title}', 9.99)">Add to Cart</button>
-      </div>
-    `;
+      `;
+      display.insertAdjacentHTML('beforeend', cardHTML);
+    });
 
     deleteContainer.innerHTML = `
       <button id="deleteCardBtn" style="margin-top: 1em; padding: 0.5em 1em; background: #e74c3c; color: white; border: none; cursor: pointer;">
-        Delete Submitted Card
+        Delete All Submitted Cards
       </button>
     `;
 
-    // Add event listener to delete button
     document.getElementById('deleteCardBtn').addEventListener('click', () => {
-      localStorage.removeItem('submittedCard');  // Remove from localStorage
-      display.innerHTML = '';                     // Clear displayed card
-      deleteContainer.innerHTML = '';             // Remove delete button
-      alert('Submitted card deleted. It will no longer appear.');
+      localStorage.removeItem('cards');
+      display.innerHTML = '';
+      deleteContainer.innerHTML = '';
+      alert('All submitted cards deleted. They will no longer appear.');
     });
+  } else {
+    display.innerHTML = '<p>No submitted cards yet.</p>';
   }
 });
-
