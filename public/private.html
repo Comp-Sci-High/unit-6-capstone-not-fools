@@ -13,7 +13,7 @@
   <header>
     <h1>CardCanopy</h1>
     <nav>
-      <a href="inde.html">Back Home</a>
+      <a href="index.html">Back Home</a>
     </nav>
   </header>
 
@@ -22,17 +22,29 @@
     <button onclick="openModal()">Create Card</button>
 
     <div class="modal" id="cardModal" style="display:none;">
+
   <form class="modal-content" id="cardForm">
     <h2>New Card</h2>
-    <input type="text" id="cardTitle" placeholder="Enter title" required />
-    <textarea id="cardText" rows="4" placeholder="Enter text"></textarea>
-    <input type="number" id="cardPrice" placeholder="Enter price" />
-    <input type="text" id="cardImage" placeholder="Image URL" required />
+    <input type="text" name="name" id="" placeholder="Enter title" required/>
+     <input type="text" name="image" id="cardImage" placeholder="Image URL" required />
+
+     <input type="number" name="price" id="cardPrice" placeholder="Enter price" />
+      <label for="card-game">Choose a card game:</label>
+  <select id="card-game" name="genre">
+    <option value="pokemon" name="genre">Pokémon</option>
+    <option value="mtg" name="genre" >Magic: The Gathering</option>
+    <option value="yugioh" name="genre">Yu-Gi-Oh!</option>
+  </select>
+  
+    <textarea id="cardText" name="description" rows="4" placeholder="Enter text"></textarea>
+    
+   
     <img id="imagePreview" class="preview" style="display:none; max-width: 100px;" />
     
     <button type="submit" id="submitCardButton">Submit</button>
     <button type="button" onclick="closeModal()">Cancel</button>
   </form>
+
 </div>
 
           
@@ -41,5 +53,7 @@
   </main>
 
   <script src="private.js"></script>
+    <script src="script.js"></script>
+
 </body>
 </html>

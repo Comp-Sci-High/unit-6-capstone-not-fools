@@ -31,12 +31,49 @@ window.addEventListener('DOMContentLoaded', () => {
     `;
 
     document.getElementById('deleteCardBtn').addEventListener('click', () => {
-      localStorage.removeItem('cards');
-      display.innerHTML = '';
-      deleteContainer.innerHTML = '';
-      alert('All submitted cards deleted. They will no longer appear.');
+      const password = prompt('Enter the admin password to delete all submitted cards:');
+      const correctPassword = 'admin123'; // Change this to your actual password
+
+      if (password === correctPassword) {
+        localStorage.removeItem('cards');
+        display.innerHTML = '';
+        deleteContainer.innerHTML = '';
+        alert('All submitted cards deleted. They will no longer appear.');
+      } else {
+        alert('Incorrect password. Deletion canceled.');
+      }
     });
-  } else {
-    display.innerHTML = '<p>No submitted cards yet.</p>';
+  } else if (display) {
+    display.innerHTML = '<p id="not" >No submitted cards yet.</p>';
   }
 });
+
+
+
+function deleteCard(buttonElement) {
+  const password = prompt("Enter admin password to delete this card:");
+  const correctPassword = "admin123"; // Change as needed
+
+  if (password === correctPassword) {
+    const card = buttonElement.closest('.card');
+    if (card) {
+      card.remove();
+      alert("Card deleted successfully.");
+    }
+  } else {
+    alert("Incorrect password. Deletion not allowed.");
+  }
+}
+
+async function deletePokemon(id) {
+  await fetch (`/delete/` + id, {method: 'DELETE'});
+  window.location.href = "/pokemon"
+}
+
+
+
+
+
+
+
+

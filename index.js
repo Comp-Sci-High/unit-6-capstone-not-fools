@@ -25,7 +25,8 @@ const cardSchema = new mongoose.Schema(
         image: { type: String},
         price: { type: Number},
         avail: { type: Boolean},
-        genre: {type: String }
+        genre: {type: String },
+        description: {type: String }
     }
 );
 
@@ -36,11 +37,10 @@ app.post("/add/card", async (req, res) => {
   const newCard = await new Card({
     name: req.body.name,
     image: req.body.image,
-    grade: req.body.grade,
-    date: req.body.date,
     price: req.body.price,
-    avail: req.body.avail,
-    genre: req.body.genre
+    genre: req.body.genre,
+     description: req.body.description
+     
   }).save();
   res.json(newCard);
 });
@@ -60,13 +60,14 @@ app.get("/pokemon", async (req, res) => {
 });
 
 app.get("/magic", async (req, res) => {
-  const cards = await Card.find({ genre: "magic" });
-  res.render("index.ejs", { cards });
+  const cards = await Card.find({ genre: "mtg" });
+  console.log(cards)
+  res.render("magic.ejs", { cards });
 });
 
 app.get("/yugioh", async (req, res) => {
   const cards = await Card.find({ genre: "yugioh" });
-  res.render("index.ejs", { cards });
+  res.render("yu.ejs", { cards });
 });
 
 

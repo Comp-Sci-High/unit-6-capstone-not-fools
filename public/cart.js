@@ -62,3 +62,13 @@ document.getElementById('clear-cart').addEventListener('click', () => {
 
 // Initial cart UI update
 updateCartUI();
+
+async function deleteMagic(id) {
+  await fetch (`/delete/` + id, {method: 'DELETE'});
+  window.location.href = "/magic"
+}
+
+async function deleteYugioh(id) {
+  await fetch (`/delete/` + id, {method: 'DELETE'});
+  window.location.href = "/yugioh"
+}

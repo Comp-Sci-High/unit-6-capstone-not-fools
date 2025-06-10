@@ -18,7 +18,7 @@
   <header>
     <h1>CardCanopy</h1>
     <nav>
-      <a href="inde.html">Home</a>
+      <a href="index.html">Home</a>
       <a href="/pokemon">Pokémon</a>
       <a href="/magic">Magic: The Gathering</a>
       <a href="/yugioh">Yu-Gi-Oh!</a>
@@ -43,12 +43,7 @@
 
   <main>
     <!-- New Section: Custom Submitted Card -->
-    <section id="submitted-card">
-  <h2>Submitted Card:By admin</h2>
-  <div id="submittedCardDisplay" class="card-grid"></div>
-  <!-- Container for delete button -->
-  <div id="deleteCardContainer"></div>
-</section>
+    
 
 
     <section id="pokemon">
@@ -67,6 +62,7 @@
             <p>Available: 1</p>
           </div>
           <button onclick="addToCart('Sabrina Gengar', 4.99)">Add to Cart</button>
+          <button onclick="deleteCard(this)">Delete</button>
         </div>
         <div class="card" data-card="charizard">
           <div class="shiny-wrapper">
@@ -81,6 +77,7 @@
             <p>Available: 1</p>
           </div>
           <button onclick="addToCart('The Rocket Trap', 99.99)">Add to Cart</button>
+          <button onclick="deleteCard(this)">Delete</button>
         </div>
         <div class="card" data-card="blastoise">
           <div class="shiny-wrapper">
@@ -95,6 +92,7 @@
             <p>Available: 1</p>
           </div>
           <button onclick="addToCart('Misty', 45.00)">Add to Cart</button>
+          <button onclick="deleteCard(this)">Delete</button>
         </div>
         <div class="card" data-card="alakazam">
           <div class="shiny-wrapper">
@@ -109,6 +107,7 @@
             <p>Available: 1</p>
           </div>
           <button onclick="addToCart('Typhlosion', 32.50)">Add to Cart</button>
+          <button onclick="deleteCard(this)">Delete</button>
         </div>
       </div>
     </section>
@@ -129,6 +128,7 @@
             <p>Available: 1</p>
           </div>
           <button onclick="addToCart('Aegis Angel', 10000)">Add to Cart</button>
+          <button onclick="deleteCard(this)">Delete</button>
         </div>
         <div class="card" data-card="lightningbolt">
           <div class="shiny-wrapper">
@@ -143,6 +143,7 @@
             <p>Available: 1</p>
           </div>
           <button onclick="addToCart('Adarkar Unicorn', 1.5)">Add to Cart</button>
+          <button onclick="deleteCard(this)">Delete</button>
         </div>
         <div class="card" data-card="timewalk">
           <div class="shiny-wrapper">
@@ -157,6 +158,7 @@
             <p>Available: 1</p>
           </div>
           <button onclick="addToCart('Acclaimed Contender', 7500)">Add to Cart</button>
+          <button onclick="deleteCard(this)">Delete</button>
         </div>
         <div class="card" data-card="shivan">
           <div class="shiny-wrapper">
@@ -171,6 +173,7 @@
             <p>Available: 1</p>
           </div>
           <button onclick="addToCart('Abbey Gargoyles', 3)">Add to Cart</button>
+          <button onclick="deleteCard(this)">Delete</button>
         </div>
       </div>
     </section>
@@ -191,6 +194,7 @@
             <p>Available: 1</p>
           </div>
           <button onclick="addToCart('Blue-Eyes White Dragon', 15)">Add to Cart</button>
+          <button onclick="deleteCard(this)">Delete</button>
         </div>
         <div class="card" data-card="darkmagician">
           <div class="shiny-wrapper">
@@ -205,6 +209,7 @@
             <p>Available: 1</p>
           </div>
           <button onclick="addToCart('Mudora the Sword Oracle', 12.5)">Add to Cart</button>
+          <button onclick="deleteCard(this)">Delete</button>
         </div>
         <div class="card" data-card="exodia">
           <div class="shiny-wrapper">
@@ -219,6 +224,7 @@
             <p>Available: 1</p>
           </div>
           <button onclick="addToCart('Skull Flame', 24.99)">Add to Cart</button>
+          <button onclick="deleteCard(this)">Delete</button>
         </div>
         <div class="card" data-card="red-eyes">
           <div class="shiny-wrapper">
@@ -233,6 +239,7 @@
             <p>Available: 1</p>
           </div>
           <button onclick="addToCart('First of the Dragonlords', 13.75)">Add to Cart</button>
+          <button onclick="deleteCard(this)">Delete</button>
         </div>
       </div>
     </section>
